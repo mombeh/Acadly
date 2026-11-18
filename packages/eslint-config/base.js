@@ -1,8 +1,8 @@
-import babelParser from "@babel/eslint-parser";
-import js from "@eslint/js";
-import eslintConfigPrettier from "eslint-config-prettier";
-import turboPlugin from "eslint-plugin-turbo";
-import onlyWarn from "eslint-plugin-only-warn";
+import babelParser from '@babel/eslint-parser';
+import js from '@eslint/js';
+import eslintConfigPrettier from 'eslint-config-prettier';
+import turboPlugin from 'eslint-plugin-turbo';
+import onlyWarn from 'eslint-plugin-only-warn';
 
 /**
  * A shared ESLint configuration for the repository.
@@ -13,13 +13,16 @@ export const config = [
   js.configs.recommended,
   eslintConfigPrettier,
   {
-    files: ["**/*.{js,mjs,cjs,ts,mts,cts,jsx,tsx}"],
+    files: ['**/*.{js,mjs,cjs,jsx,ts,mts,cts,tsx}'],
     languageOptions: {
       parser: babelParser,
       parserOptions: {
         requireConfigFile: false,
         babelOptions: {
-          presets: ["@babel/preset-typescript"],
+          presets: [
+            '@babel/preset-typescript',
+            ['@babel/preset-react', { runtime: 'automatic' }],
+          ],
         },
       },
     },
@@ -27,7 +30,20 @@ export const config = [
       turbo: turboPlugin,
     },
     rules: {
-      "turbo/no-undeclared-env-vars": "warn",
+      'turbo/no-undeclared-env-vars': 'warn',
+    },
+  },
+  {
+    files: ['**/*.{ts,mts,cts,tsx}'],
+    rules: {
+      'no-undef': 'off',
+      'no-unused-vars': ['warn', { argsIgnorePattern: '^_' }],
+    },
+  },
+  {
+    files: ['**/*.{jsx,tsx}'],
+    rules: {
+      'no-unused-vars': 'off',
     },
   },
   {
@@ -36,6 +52,6 @@ export const config = [
     },
   },
   {
-    ignores: ["dist/**"],
+    ignores: ['dist/**'],
   },
 ];

@@ -1,4 +1,0 @@
-{
-  "*.{ts,tsx,js,jsx}": ["turbo run lint --filter=... -- {file}", "prettier --write"],
-  "*.{json,md,css}": ["prettier --write"]
-}
