@@ -1,4 +1,4 @@
 {
-  "*.{ts,tsx,js,jsx}": ["eslint --max-warnings 0", "prettier --write"],
+  "*.{ts,tsx,js,jsx}": ["turbo run lint --filter=... -- {file}", "prettier --write"],
   "*.{json,md,css}": ["prettier --write"]
 }

@@ -13,6 +13,7 @@ export const config = [
   js.configs.recommended,
   eslintConfigPrettier,
   {
+    files: ["**/*.{js,mjs,cjs,ts,mts,cts,jsx,tsx}"],
     languageOptions: {
       parser: babelParser,
       parserOptions: {
