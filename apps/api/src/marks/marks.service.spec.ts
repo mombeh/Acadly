@@ -221,12 +221,13 @@ describe('MarksService', () => {
     });
 
     it('provides an update branch so existing marks are updated', async () => {
+      prisma.student.findMany.mockResolvedValue([{ id: studentId1 }]);
+
       await service.bulkUpsert(classId, classSubjectId, {
         sequence: 'SEQUENCE_1',
         marks: [{ studentId: studentId1, score: 18.25 }],
       });
 
-      prisma.student.findMany.mockResolvedValue([{ id: studentId1 }]);
       const args = prisma.mark.upsert.mock.calls[0][0] as UpsertArgs;
       expect(Prisma.Decimal.isDecimal(args.update.score)).toBe(true);
       expect(args.update.score.equals(18.25)).toBe(true);
@@ -267,6 +268,8 @@ describe('MarksService', () => {
     });
 
     it('does not create marks for omitted students', async () => {
+      prisma.student.findMany.mockResolvedValue([{ id: studentId1 }]);
+
       await service.bulkUpsert(classId, classSubjectId, {
         sequence: 'SEQUENCE_1',
         marks: [{ studentId: studentId1, score: 15.5 }],
