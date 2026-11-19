@@ -11,14 +11,10 @@ import {
 } from '@nestjs/common';
 import { z } from 'zod';
 import { AcademicYearsService } from './academic-years.service.js';
-import {
-  CreateAcademicYearDto,
-  createAcademicYearSchema,
-} from './dto/create-academic-year.dto.js';
-import {
-  UpdateAcademicYearDto,
-  updateAcademicYearSchema,
-} from './dto/update-academic-year.dto.js';
+import { createAcademicYearSchema } from './dto/create-academic-year.dto.js';
+import type { CreateAcademicYearDto } from './dto/create-academic-year.dto.js';
+import { updateAcademicYearSchema } from './dto/update-academic-year.dto.js';
+import type { UpdateAcademicYearDto } from './dto/update-academic-year.dto.js';
 
 const idSchema = z.uuid('Academic year ID must be a valid UUID');
 

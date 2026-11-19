@@ -11,8 +11,10 @@ import {
 } from '@nestjs/common';
 import { z } from 'zod';
 import { ClassesService } from './classes.service.js';
-import { CreateClassDto, createClassSchema } from './dto/create-class.dto.js';
-import { UpdateClassDto, updateClassSchema } from './dto/update-class.dto.js';
+import { createClassSchema } from './dto/create-class.dto.js';
+import type { CreateClassDto } from './dto/create-class.dto.js';
+import { updateClassSchema } from './dto/update-class.dto.js';
+import type { UpdateClassDto } from './dto/update-class.dto.js';
 
 const idSchema = z.uuid('Class ID must be a valid UUID');
 
