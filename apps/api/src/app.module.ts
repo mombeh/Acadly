@@ -1,7 +1,9 @@
 import { Module } from '@nestjs/common';
 import { createObserveModule } from '@nestjs/observe';
+import { AcademicYearsModule } from './academic-years/academic-years.module.js';
 import { AppController } from './app.controller.js';
 import { AppService } from './app.service.js';
+import { ClassesModule } from './classes/classes.module.js';
 import { PrismaModule } from './prisma/prisma.module.js';
 
 export const { ObserveModule, ObserveInstrument } = createObserveModule();
@@ -17,6 +19,8 @@ export const { ObserveModule, ObserveInstrument } = createObserveModule();
       serviceId: 'api',
     }),
     PrismaModule,
+    AcademicYearsModule,
+    ClassesModule,
   ],
   controllers: [AppController],
   providers: [AppService],

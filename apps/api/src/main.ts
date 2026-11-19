@@ -1,3 +1,4 @@
+import { StandardSchemaValidationPipe } from '@nestjs/common';
 import { NestFactory } from '@nestjs/core';
 import { AppModule, ObserveInstrument } from './app.module.js';
 
@@ -6,6 +7,7 @@ async function bootstrap() {
     instrument: ObserveInstrument,
   });
 
+  app.useGlobalPipes(new StandardSchemaValidationPipe());
   app.setGlobalPrefix('api');
 
   app.enableCors({
