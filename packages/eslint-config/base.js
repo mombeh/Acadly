@@ -13,7 +13,7 @@ export const config = [
   js.configs.recommended,
   eslintConfigPrettier,
   {
-    files: ['**/*.{js,mjs,cjs,jsx,ts,mts,cts,tsx}'],
+    files: ['**/*.{js,mjs,cjs,jsx,tsx}'],
     languageOptions: {
       parser: babelParser,
       parserOptions: {
@@ -34,10 +34,22 @@ export const config = [
     },
   },
   {
+    files: ['**/*.{ts,mts,cts}'],
+    languageOptions: {
+      parser: babelParser,
+      parserOptions: {
+        requireConfigFile: false,
+        babelOptions: {
+          presets: ['@babel/preset-typescript'],
+        },
+      },
+    },
+  },
+  {
     files: ['**/*.{ts,mts,cts,tsx}'],
     rules: {
       'no-undef': 'off',
-      'no-unused-vars': ['warn', { argsIgnorePattern: '^_' }],
+      'no-unused-vars': 'off',
     },
   },
   {
