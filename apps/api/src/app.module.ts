@@ -5,6 +5,7 @@ import { AppController } from './app.controller.js';
 import { AppService } from './app.service.js';
 import { ClassesModule } from './classes/classes.module.js';
 import { PrismaModule } from './prisma/prisma.module.js';
+import { StudentsModule } from './students/students.module.js';
 
 export const { ObserveModule, ObserveInstrument } = createObserveModule();
 
@@ -21,6 +22,7 @@ export const { ObserveModule, ObserveInstrument } = createObserveModule();
     PrismaModule,
     AcademicYearsModule,
     ClassesModule,
+    StudentsModule,
   ],
   controllers: [AppController],
   providers: [AppService],
