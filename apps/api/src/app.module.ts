@@ -4,8 +4,10 @@ import { AcademicYearsModule } from './academic-years/academic-years.module.js';
 import { AppController } from './app.controller.js';
 import { AppService } from './app.service.js';
 import { ClassesModule } from './classes/classes.module.js';
+import { ClassSubjectsModule } from './class-subjects/class-subjects.module.js';
 import { PrismaModule } from './prisma/prisma.module.js';
 import { StudentsModule } from './students/students.module.js';
+import { SubjectsModule } from './subjects/subjects.module.js';
 
 export const { ObserveModule, ObserveInstrument } = createObserveModule();
 
@@ -23,6 +25,8 @@ export const { ObserveModule, ObserveInstrument } = createObserveModule();
     AcademicYearsModule,
     ClassesModule,
     StudentsModule,
+    SubjectsModule,
+    ClassSubjectsModule,
   ],
   controllers: [AppController],
   providers: [AppService],
