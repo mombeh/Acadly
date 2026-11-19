@@ -16,6 +16,7 @@ export const { ObserveModule, ObserveInstrument } = createObserveModule();
       appSecret: process.env.OBSERVE_APP_SECRET ?? 'YOUR_APP_SECRET',
       serviceId: 'api',
     }),
+    PrismaModule,
   ],
   controllers: [AppController],
   providers: [AppService],
