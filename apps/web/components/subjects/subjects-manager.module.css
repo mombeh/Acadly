@@ -1,0 +1,22 @@
+.subjectForm {
+  grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr) auto;
+}
+
+.editGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+@media (max-width: 900px) {
+  .subjectForm {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 640px) {
+  .subjectForm,
+  .editGrid {
+    grid-template-columns: 1fr;
+  }
+}
