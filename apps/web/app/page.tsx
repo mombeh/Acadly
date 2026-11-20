@@ -68,6 +68,28 @@ export default function Home() {
           ))}
         </div>
       </section>
+
+      <section
+        className={styles.gettingStarted}
+        aria-labelledby="start-heading"
+      >
+        <h2 id="start-heading" className={styles.sectionTitle}>
+          Getting started
+        </h2>
+        <ol className={styles.steps}>
+          <li>
+            Create an{' '}
+            <Link href="/academic-years" className={styles.inlineLink}>
+              academic year
+            </Link>{' '}
+            for the current session and mark it active.
+          </li>
+          <li>Add classes to that academic year.</li>
+          <li>
+            Enrol students into classes, then assign subjects and records.
+          </li>
+        </ol>
+      </section>
     </div>
   );
 }
