@@ -1,0 +1,44 @@
+.selectors {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.inlineState {
+  margin-top: 16px;
+}
+
+.inlineNotice {
+  margin-top: 16px;
+}
+
+.scoreCell {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.scoreInput {
+  width: 120px;
+  height: 36px;
+}
+
+.scoreError {
+  margin-top: 6px;
+  font-size: 12px;
+  color: var(--error);
+}
+
+@media (max-width: 900px) {
+  .selectors {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 640px) {
+  .selectors {
+    grid-template-columns: 1fr;
+  }
+
+  .scoreInput {
+    width: 100%;
+  }
+}
