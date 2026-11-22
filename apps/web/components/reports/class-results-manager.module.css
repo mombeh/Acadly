@@ -144,13 +144,8 @@
     page-break-inside: avoid;
   }
 
-  .ui-table,
-  table {
-    border-collapse: collapse !important;
-  }
-
-  th,
-  td {
+  .rankingTable th,
+  .rankingTable td {
     border: 1px solid var(--border) !important;
   }
 }
