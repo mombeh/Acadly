@@ -1,0 +1,16 @@
+.feedback {
+  padding: 12px 14px;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.success {
+  background: var(--success-soft);
+  color: var(--success);
+}
+
+.error {
+  background: var(--error-soft);
+  color: var(--error);
+}
