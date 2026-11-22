@@ -1,0 +1,307 @@
+.headerActions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.backLink {
+  margin-left: auto;
+  color: var(--primary-strong);
+  font-size: 13px;
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.backLink:hover {
+  text-decoration: underline;
+}
+
+.inlineState {
+  margin-top: 16px;
+}
+
+.report {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0;
+  background: #ffffff;
+  border: 0;
+  box-shadow: none;
+  border-radius: 0;
+}
+
+.printable {
+  min-height: 100vh;
+}
+
+.reportHeader {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 24px 0;
+  border-bottom: 2px solid var(--text);
+  margin-bottom: 24px;
+}
+
+.school {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.schoolName {
+  font-size: 20px;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  color: var(--text);
+}
+
+.schoolDocument {
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--primary);
+}
+
+.reportMeta {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  align-items: flex-end;
+  text-align: right;
+}
+
+.metaItem {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.metaLabel {
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--muted);
+}
+
+.metaValue {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.studentInfo {
+  display: flex;
+  gap: 24px;
+  padding: 0 24px 24px;
+  border-bottom: 1px solid var(--border);
+}
+
+.infoItem {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  flex: 1;
+  min-width: 0;
+}
+
+.infoLabel {
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--muted);
+}
+
+.infoValue {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text);
+}
+
+.subjectsSection {
+  padding: 24px;
+}
+
+.sectionTitle {
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--muted);
+  margin-bottom: 12px;
+}
+
+.subjectTable {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+}
+
+.subjectTable th {
+  padding: 10px 8px;
+  text-align: left;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--muted);
+  border-bottom: 2px solid var(--text);
+}
+
+.subjectTable td {
+  padding: 10px 8px;
+  border-bottom: 1px solid var(--border);
+  vertical-align: middle;
+}
+
+.subjectTable tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.subjectTable tbody tr {
+  page-break-inside: avoid;
+}
+
+.scoreCell {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+.statusCell {
+  text-align: right;
+  white-space: nowrap;
+}
+
+.generalSection {
+  padding: 24px;
+  border-top: 2px solid var(--text);
+}
+
+.generalGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+
+.generalItem {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.generalLabel {
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--muted);
+}
+
+.generalValue {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--text);
+  font-variant-numeric: tabular-nums;
+}
+
+.complete {
+  color: var(--success);
+}
+
+.pending {
+  color: var(--error);
+}
+
+.pendingNote {
+  margin-top: 12px;
+  padding: 10px 14px;
+  border-radius: 8px;
+  background: var(--error-soft);
+  color: var(--error);
+  font-size: 13px;
+}
+
+.reportFooter {
+  margin-top: 32px;
+  padding: 24px;
+  border-top: 1px solid var(--border);
+  font-size: 11px;
+  color: var(--muted);
+  text-align: center;
+}
+
+@media print {
+  body * {
+    visibility: hidden !important;
+  }
+
+  #report-card,
+  #report-card * {
+    visibility: visible !important;
+  }
+
+  #report-card {
+    position: absolute !important;
+    left: 0;
+    top: 0;
+    width: 100%;
+    min-height: 100vh;
+    padding: 0;
+    margin: 0;
+    background: #ffffff;
+    box-shadow: none;
+    border: 0;
+    border-radius: 0;
+  }
+
+  .headerActions,
+  .backLink,
+  .ui-card,
+  .stack > section:not(#report-card) {
+    display: none !important;
+  }
+
+  .report {
+    max-width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+
+  .reportHeader,
+  .studentInfo,
+  .subjectsSection,
+  .generalSection,
+  .reportFooter {
+    padding-left: 18mm;
+    padding-right: 18mm;
+  }
+
+  .subjectTable {
+    font-size: 11.5px;
+  }
+
+  .subjectTable th,
+  .subjectTable td {
+    padding: 6px 4px;
+  }
+
+  .generalGrid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+  }
+
+  .generalValue {
+    font-size: 14px;
+  }
+
+  @page {
+    size: A4;
+    margin: 15mm;
+  }
+}
