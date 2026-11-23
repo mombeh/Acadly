@@ -1,10 +1,5 @@
-import { ComingSoon } from '../../components/coming-soon';
+import { ClassResultsManager } from '../../components/reports/class-results-manager';
 
 export default function ReportsPage() {
-  return (
-    <ComingSoon
-      title="Reports"
-      description="Reporting is being built. Once available you will be able to generate performance summaries and export academic results."
-    />
-  );
+  return <ClassResultsManager />;
 }

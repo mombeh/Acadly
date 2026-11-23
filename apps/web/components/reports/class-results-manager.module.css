@@ -1,0 +1,151 @@
+.selectors {
+  grid-template-columns: repeat(2, minmax(0, 1fr)) auto;
+  align-items: end;
+}
+
+.inlineState {
+  margin-top: 16px;
+}
+
+.inlineNotice {
+  margin-top: 16px;
+}
+
+.summary {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.summaryItem {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 12px 16px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--surface-muted);
+  flex: 1;
+  min-width: 0;
+}
+
+.summaryLabel {
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--muted);
+}
+
+.summaryValue {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.pendingNote {
+  margin-top: 12px;
+  padding: 10px 14px;
+  border-radius: 8px;
+  background: var(--primary-soft);
+  color: var(--primary-strong);
+  font-size: 13px;
+}
+
+.rankingTable {
+  font-size: 14px;
+}
+
+.rankCell {
+  width: 60px;
+  text-align: center;
+  font-variant-numeric: tabular-nums;
+}
+
+.scoreCell {
+  width: 140px;
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+.statusCell {
+  width: 110px;
+}
+
+.actionsHeader {
+  text-align: right;
+  width: 130px;
+}
+
+.actionsCell {
+  text-align: right;
+  width: 130px;
+  white-space: nowrap;
+}
+
+.reportLink {
+  color: var(--primary-strong);
+  font-size: 13px;
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.reportLink:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 900px) {
+  .selectors {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-rows: auto auto;
+  }
+
+  .selectors .field:last-child {
+    grid-column: 1 / -1;
+  }
+
+  .summary {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 640px) {
+  .card {
+    padding: 18px;
+  }
+
+  .selectors {
+    grid-template-columns: 1fr;
+  }
+
+  .rankingTable {
+    font-size: 13px;
+  }
+
+  .actionsCell {
+    width: 100px;
+  }
+}
+
+@media print {
+  .selectors,
+  .summary,
+  .pendingNote,
+  .reportLink {
+    display: none !important;
+  }
+
+  .rankingTable {
+    font-size: 12px;
+  }
+
+  .rankingTable tbody tr {
+    page-break-inside: avoid;
+  }
+
+  .rankingTable th,
+  .rankingTable td {
+    border: 1px solid var(--border) !important;
+  }
+}

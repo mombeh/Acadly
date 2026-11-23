@@ -7,6 +7,7 @@ import { ClassesModule } from './classes/classes.module.js';
 import { ClassSubjectsModule } from './class-subjects/class-subjects.module.js';
 import { MarksModule } from './marks/marks.module.js';
 import { PrismaModule } from './prisma/prisma.module.js';
+import { ResultsModule } from './results/results.module.js';
 import { StudentsModule } from './students/students.module.js';
 import { SubjectsModule } from './subjects/subjects.module.js';
 
@@ -29,6 +30,7 @@ export const { ObserveModule, ObserveInstrument } = createObserveModule();
     SubjectsModule,
     ClassSubjectsModule,
     MarksModule,
+    ResultsModule,
   ],
   controllers: [AppController],
   providers: [AppService],
